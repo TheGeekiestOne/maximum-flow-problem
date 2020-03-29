@@ -19,7 +19,7 @@ def main():
         print("1. Enter a network")
         print("2. Generate a random network")
         print("3. Delete a link from the network")
-        print("5. Modify the capacity of a link in the network")
+        print("4. Modify the capacity of a link in the network")
         print("5. Compute the maximum flow of the network")
         print("6. Quit")
 
@@ -100,7 +100,7 @@ def main():
 
         if choice == "4":
 
-            print("Modifying the capacity of a link: parent-link-new_capacity")
+            print("Modifying the capacity of a link: parent-child-new_capacity")
             parent, child, capacity = input("link: ").split("-")
 
             parent, child = int(parent), int(child)

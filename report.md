@@ -40,22 +40,25 @@ compute_flow:
 This function is tasked with computing the computing all possible shortest paths from the source to the sink. It then calls saturate_path to fill those paths with the maximum flow possible, corresponding to the bottleneck of that path.
 
 saturate_path:
-Fills a given path with the maximum flow possible, corresponding to the bottleneck of that path.
-
+Fills a given path with the maximum flow possible, corresponding to the bottleneck of that path. 
 
 Performance
 -----------
 
 Various network sizes were tested using the random generation option ; they yielded the following runtimes:
 
-6 nodes:
-12 nodes:
-24 nodes:
-48 nodes:
+6 nodes:  0.0009975433349609375 seconds
+12 nodes: 0.003989219665527344 seconds
+24 nodes: 0.00698399543762207 seconds
+48 nodes: 0.005983829498291016 seconds
+9999 nodes: 225.35471773147583 seconds
 
-Note: put your own times here as it will differ from machine to machine.
+Note: these are my times times here as it will differ from machine to machine.
 
 Conclusion
 ----------
 
-The Big-O complexity is (This depends on the times you got)
+The Big-O complexity is based on my computer times. The algorithm runs in O(V^2E) time and is similar to the Edmonds–Karp algorithm, which runs in O(VE^2) time, in that it uses shortest augmenting paths
+
+
+
