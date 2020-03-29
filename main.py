@@ -33,7 +33,7 @@ def main():
 
         if choice == "1":
 
-            print("Manually initializing a network, press Return to end.")
+            print("Manually initialising a network, press Return to end.")
             network = defaultdict(dict)
 
             while True:
