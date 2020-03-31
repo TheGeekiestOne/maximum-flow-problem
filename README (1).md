@@ -2,16 +2,16 @@
 Title
 -----
 
-In order to solve the maximum flow problem in an efficient yet easy to implement way, i resorted to use Dinic's algorithm.
+In order to solve the maximum flow problem in an efficient yet easy to implement way, we resorted to use Dinic's algorithm.
 
-The principle of the algorithm is to find the shortest paths in the network leading from the source to the sink and avoiding back tracking, then progressively fill those paths with their capacity values. This is done over and over until no more valid paths exist.
+The principle of the algorithm is to find the shortest paths in the network leading from the source to the sink and avoiding back tracking, then progressively fill those paths with their bottleneck values. This is done over and over until no more valid paths exist.
 
-The implementation it self is fairly modular and divides the tasks into functions. The main function serves as an interface to the user. algorithm is a function that wraps around compute_layers and compute_flow, which do the heavy lifting of dividng the network into layers based of how close the nodes are from the source ; and finding all possible shortest paths and filling them up to their capacity, respectively.
+The implementation it self is fairly modular and divides the tasks into functions. The main function serves as an interface to the user. algorithm is a function that wraps around compute_layers and compute_flow, which do the heavy lifting of diving the network into layers based of how close the nodes are from the source ; and finding all possible shortest paths and filling them up to their bottleneck, respectively.
 
 Data structure
 --------------
 
-The most suitable data structure i found for the problem was to represent both the network and the flow as dictionaries of dictionaries (i took advantage of python's built in defaultdict data type).
+The most suitable data structure we found for the problem was to represent both the network and the flow as dictionaries of dictionaries (we took advantage of pythonl's built in defaultdict data type).
 
 Each key in the network dictionary is node, the value attached to it being a dictionary that has the children of that node as keys and their capacity as values.
 
@@ -34,13 +34,13 @@ algorithm:
 This function in a high level implementation of Dinic's algorithm. It computes the layers of the graph and the flow until they converge into a solution..
 
 compute_layers:
-This function is a breadth first search that labels the nodes according to the clossest layer they are part of. For example, the source node is the only node in layer 0, it children are the only nodes on layer 1... etc.
+This function is a breadth first search that labels the nodes according to the clossest layer they are part of. For example, the source node is the only node in layer 0, it children are he only nodes on layer 1... etc.
 
 compute_flow:
-This function is tasked with computing all the possible shortest paths from the source to the sink. It then calls saturate_path to fill those paths with the maximum flow possible, corresponding to the capacity of that path.
+This function is tasked with computing the computing all possible shortest paths from the source to the sink. It then calls saturate_path to fill those paths with the maximum flow possible, corresponding to the bottleneck of that path.
 
 saturate_path:
-Fills a given path with the maximum flow possible, corresponding to the capacity of that path. 
+Fills a given path with the maximum flow possible, corresponding to the bottleneck of that path. 
 
 Performance
 -----------

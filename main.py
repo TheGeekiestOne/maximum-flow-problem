@@ -13,7 +13,9 @@ def main():
     choice = None
 
     while choice != "6":
-
+        print("MAX FLOW PROBLEM")
+        print("Dinic's Algorithm")
+        print("-------------------------")
         print()
         print("Select one of the following options:")
         print("1. Enter a network")
@@ -33,7 +35,7 @@ def main():
 
         if choice == "1":
 
-            print("Manually initializing a network, press Return to end.")
+            print("Manually initialising a network, press Return to end.")
             network = defaultdict(dict)
 
             while True:
